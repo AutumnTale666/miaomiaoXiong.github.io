@@ -8,6 +8,9 @@
  
 ### 主页面: 轮播图片这个小技巧比较普遍的被使用，代码如下：
  
+ ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/4.jpg)
+ 
+ #### wxml:
   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
     <block wx:for="{{movies}}" wx:key="key">
       <swiper-item>
@@ -18,6 +21,7 @@
  
  使用swiper组件,滑块视图容器。
  
+ 
 indicator-dots	Boolean	false	是否显示面板指示点	
 
 autoplay	Boolean	false	是否自动切换	
@@ -25,7 +29,72 @@ autoplay	Boolean	false	是否自动切换
 interval	Number	5000	自动切换时间间隔	
 
 duration	Number	500	滑动动画时长	
+  
+ ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  
+ #### wxml:
+ <view class='tui-bd__image'>
+          <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
+ </view>
+ 
+ <view class='page__ft'>
+  <view class='page-first__img' bindtap='onTap'>
+    <image src='../../assets/icons/shouye.png'></image>
+
+  </view>
+
+  <view class='page-first__img'>
+    <image src='../../assets/icons/shoucang.png' animation="{{enlargeAnimation}}" bindtap='shoucang'></image>
+  </view>
+
+  <view class='page-first__img' bindtap='onTa'>
+    <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}"></image>
+  </view>
+</view>
+
+#### wxjs:
+// 购买， 点击图片，购物车显示已加购
+  buy: function (e) {
+    for (var i = 0; i < this.data.goods.length;i++){
+      if (e.currentTarget.dataset.id == this.data.goods[i].id) {
+        app.globalData.buy.push(this.data.goods[i])
+        console.log(app.globalData.buy)
+  }
+  }
+},
+//收藏，动画放大效果
+  shoucang: function (event) {
+    var animation = wx.createAnimation({
+      duration: 700,
+    })
+    //  图片放大
+    animation.opacity(0.6).scale(0.9).step();//修改透明度,放大  
+    this.setData({
+      enlargeAnimation: animation.export()
+    })
+  },
+  // 购买点击事件，触发时使购物车图片放大
+  goumai: function (event) {
+    var animation = wx.createAnimation({
+      duration: 100,
+    })
+    //购物车旋转
+    animation.rotate(30).step();
+    animation.rotate(0).step();
+    animation.rotate(-30).step();
+    animation.rotate(0).step();
+     this.setData({
+      rorateAnimation: animation.export(),
+     })
+  },
+ 
+ 
+ ### 最麻烦的当属购物车加购事件最麻烦了，给我一首歌的时间，且听我慢慢跟你说
+ 
+ 
+ 
+ 
+  
  
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 

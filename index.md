@@ -34,7 +34,7 @@ duration	Number	500	滑动动画时长
  
  #### bali.wxml:
  
- ` <view class='tui-bd__image'>
+  ` <view class='tui-bd__image'>
          <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
  </view>
  

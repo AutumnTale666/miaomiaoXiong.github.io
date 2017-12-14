@@ -34,24 +34,7 @@ duration	Number	500	滑动动画时长
  
  #### bali.wxml:
  
-  ` <view class='tui-bd__image'>
-         <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
- </view>
- 
- <view class='page__ft'>
-  <view class='page-first__img' bindtap='onTap'>
-    <image src='../../assets/icons/shouye.png'></image>
-
-  </view>
-
-  <view class='page-first__img'>
-    <image src='../../assets/icons/shoucang.png' animation="{{enlargeAnimation}}" bindtap='shoucang'></image>
-  </view>
-
-  <view class='page-first__img' bindtap='onTa'>
-    <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}"></image>
-  </view>
-</view> `
+ [documentation](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/pages/bali/index.wxml)
 
 
 #### bali.wxjs:

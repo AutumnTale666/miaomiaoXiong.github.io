@@ -33,6 +33,7 @@ duration	Number	500	滑动动画时长
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  
  #### wxml:
+ 
  ` <view class='tui-bd__image'>
          <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
  </view>

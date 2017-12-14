@@ -11,13 +11,13 @@
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/4.jpg)
  
  #### wxml:
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
+ ` <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
     <block wx:for="{{movies}}" wx:key="key">
       <swiper-item>
         <image src="{{item.url}}" class="slide-image" mode="widthfix" />
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> `
  
  使用swiper组件,滑块视图容器。
  
@@ -33,7 +33,7 @@ duration	Number	500	滑动动画时长
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  
  #### wxml:
- `<view class='tui-bd__image'>
+ ` <view class='tui-bd__image'>
          <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
  </view>
  
@@ -50,7 +50,7 @@ duration	Number	500	滑动动画时长
   <view class='page-first__img' bindtap='onTa'>
     <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}"></image>
   </view>
-</view>`
+</view> `
 
 #### wxjs:
 // 购买， 点击图片，购物车显示已加购

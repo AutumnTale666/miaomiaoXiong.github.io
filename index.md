@@ -18,10 +18,12 @@
  
  使用swiper组件,滑块视图容器。
  
- 属性名	类型	默认值	说明	最低版本
 indicator-dots	Boolean	false	是否显示面板指示点	
+
 autoplay	Boolean	false	是否自动切换	
+
 interval	Number	5000	自动切换时间间隔	
+
 duration	Number	500	滑动动画时长	
  
  

@@ -4,7 +4,27 @@
  
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/luping.gif)
  
-
+## 在上面的录屏演示中，主要是实现购物车功能，话不多说，扔个代码看看：
+ 
+### 主页面: 轮播图片这个小技巧比较普遍的被使用，代码如下：
+ 
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
+    <block wx:for="{{movies}}" wx:key="key">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="widthfix" />
+      </swiper-item>
+    </block>
+  </swiper>
+ 
+ 使用swiper组件,滑块视图容器。
+ 
+ 属性名	类型	默认值	说明	最低版本
+indicator-dots	Boolean	false	是否显示面板指示点	
+autoplay	Boolean	false	是否自动切换	
+interval	Number	5000	自动切换时间间隔	
+duration	Number	500	滑动动画时长	
+ 
+ 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown

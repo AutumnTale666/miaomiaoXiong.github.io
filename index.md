@@ -10,7 +10,7 @@
  
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/4.jpg)
  
- #### wxml:
+ #### index.wxml:
  ` <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
     <block wx:for="{{movies}}" wx:key="key">
       <swiper-item>
@@ -32,7 +32,7 @@ duration	Number	500	滑动动画时长
   
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  
- #### wxml:
+ #### bali.wxml:
  
  ` <view class='tui-bd__image'>
          <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
@@ -54,7 +54,7 @@ duration	Number	500	滑动动画时长
 </view> `
 
 
-#### wxjs:
+#### bali.wxjs:
 // 购买， 点击图片，购物车显示已加购
   `buy: function (e) {
     for (var i = 0; i < this.data.goods.length;i++){

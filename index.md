@@ -52,6 +52,7 @@ duration	Number	500	滑动动画时长
   </view>
 </view> `
 
+
 #### wxjs:
 // 购买， 点击图片，购物车显示已加购
   `buy: function (e) {

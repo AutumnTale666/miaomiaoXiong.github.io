@@ -33,8 +33,8 @@ duration	Number	500	滑动动画时长
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  
  #### wxml:
- <view class='tui-bd__image'>
-          <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
+ `<view class='tui-bd__image'>
+         <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
  </view>
  
  <view class='page__ft'>
@@ -50,11 +50,11 @@ duration	Number	500	滑动动画时长
   <view class='page-first__img' bindtap='onTa'>
     <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}"></image>
   </view>
-</view>
+</view>`
 
 #### wxjs:
 // 购买， 点击图片，购物车显示已加购
-  buy: function (e) {
+  `buy: function (e) {
     for (var i = 0; i < this.data.goods.length;i++){
       if (e.currentTarget.dataset.id == this.data.goods[i].id) {
         app.globalData.buy.push(this.data.goods[i])
@@ -86,7 +86,7 @@ duration	Number	500	滑动动画时长
      this.setData({
       rorateAnimation: animation.export(),
      })
-  },
+  },`
  
  
  ### 最麻烦的当属购物车加购事件最麻烦了，给我一首歌的时间，且听我慢慢跟你说

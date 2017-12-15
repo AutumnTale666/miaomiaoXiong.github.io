@@ -34,7 +34,7 @@ duration	Number	500	滑动动画时长
  
  #### bali.wxml:  ###
  
- `<viewclass="tui-bd__image">
+ ** <viewclass="tui-bd__image">
 <imagedata-id="1"src="../../assets/icons/goumai.png"></image>
 </view>
 <view class='page__ft'>
@@ -51,7 +51,7 @@ duration	Number	500	滑动动画时长
     <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}"></image>
   </view>
 </view>
-`
+**
 
 #### bali.wxjs:
 // 购买， 点击图片，购物车显示已加购

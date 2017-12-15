@@ -34,23 +34,23 @@ duration	Number	500	滑动动画时长
  
  #### bali.wxml:  
  
- ** <viewclass="tui-bd__image">
+ ** 
+     <viewclass="tui-bd__image">
     <imagedata-id="1"src="../../assets/icons/goumai.png"></image>
     </view>
    <view class='page__ft'>
      <view class='page-first__img' bindtap='onTap'>
        <image src='../../assets/icons/shouye.png'></image>
-
-     </view>
-
-     <view class='page-first__img'>
-       <image src='../../assets/icons/shoucang.png' animation="{{enlargeAnimation}}" bindtap='shoucang'></image>
+       </view>
+      <view class='page-first__img'>
+       <image src='../../assets/icons/shoucang.png' animation="{{enlargeAnimation}}"           bindtap='shoucang'></image>
      </view>
 
      <view class='page-first__img' bindtap='onTa'>
-       <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}"></image>
+       <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}">          </image>
      </view>
-   </view> **
+     </view> 
+**
 
 #### bali.wxjs:
 // 购买， 点击图片，购物车显示已加购

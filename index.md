@@ -126,7 +126,7 @@ duration	Number	500	滑动动画时长
         <text class="allnum">({{num}})</text>
       </view>
 </view>
- 
+ `
   #### sCar/sCar.js:
   
  `
@@ -223,8 +223,8 @@ Page({
     //计算金额
     that.count()
   },
-  `
-  `
+ 
+  
   //全选
   allSelect: function (e) {
     var that = this
@@ -252,8 +252,7 @@ Page({
     //计算金额
     that.count()
   },
-  `
-  `
+ 
   // //计算数量
   countNum: function () {
     var that = this
@@ -271,8 +270,7 @@ Page({
       num: allNum
     })
   },
-  `
-  `
+  
   //计算金额方法
   count: function () {
     var that = this

@@ -11,13 +11,13 @@
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/4.jpg)
  
  #### index.wxml:
- ` <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
+ <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
     <block wx:for="{{movies}}" wx:key="key">
       <swiper-item>
         <image src="{{item.url}}" class="slide-image" mode="widthfix" />
       </swiper-item>
     </block>
-  </swiper> `
+  </swiper>  
  
  使用swiper组件,滑块视图容器。
  
@@ -33,7 +33,7 @@ duration	Number	500	滑动动画时长
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/2.jpg)
  #### bali/index.html:
-  ` <viewclass="tui-bd__image">
+  <viewclass="tui-bd__image">
     <imagedata-id="1"src="../../assets/icons/goumai.png"></image>
     </view>
     <view class='page__ft'>
@@ -46,11 +46,11 @@ duration	Number	500	滑动动画时长
   <view class='page-first__img' bindtap='onTa'>
        <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}">          </image>
      </view>
-     </view> `
+     </view>  
 
 #### bali/index.js:
 // 购买， 点击图片，购物车显示已加购
-  ** buy: function (e) {
+   buy: function (e) {
     for (var i = 0; i < this.data.goods.length;i++){
       if (e.currentTarget.dataset.id == this.data.goods[i].id) {
         app.globalData.buy.push(this.data.goods[i])
@@ -83,13 +83,13 @@ duration	Number	500	滑动动画时长
      this.setData({
       rorateAnimation: animation.export(),
      })
-  }, **
+  }, 
  
  
  ### 最麻烦的当属购物车加购事件最麻烦了，给我一首歌的时间，且听我慢慢跟你说
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/1.png)
  #### sCar/sCar.wxml:
- `
+  
  <view class="cart-box">
         <view class="item" wx:for="{{buy}}" wx:key="id">
                   <icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />
@@ -125,10 +125,9 @@ duration	Number	500	滑动动画时长
         <text class="allnum">({{num}})</text>
       </view>
 </view>
- `
+ 
   #### sCar/sCar.js:
   
- `
  const app = getApp()
 Page({
   data: {
@@ -141,8 +140,8 @@ Page({
       buy: app.globalData.buy,
     });
     },
-    `
-    `
+    
+    
   change: function (e) {
      var that = this
     //得到下标
@@ -168,8 +167,7 @@ Page({
     //计算金额
     that.count()
   },
-  `
-  `
+  
   //加法
   addtion: function (e) {
     var that = this
@@ -194,8 +192,7 @@ Page({
     //计算金额
     that.count()
   },
-  `
-  `
+ 
   // //减法
   subtraction: function (e) {
     var that = this
@@ -212,8 +209,7 @@ Page({
       num--
       newList[index].num = num
     }
-
-    //把新的数组传给前台
+   //把新的数组传给前台
     that.setData({
       buy: newList
     })
@@ -222,8 +218,6 @@ Page({
     //计算金额
     that.count()
   },
- 
-  
   //全选
   allSelect: function (e) {
     var that = this
@@ -251,8 +245,7 @@ Page({
     //计算金额
     that.count()
   },
- 
-  // //计算数量
+ //计算数量
   countNum: function () {
     var that = this
     //遍历数组，把既选中的num加起来
@@ -286,7 +279,7 @@ Page({
       count: newCount
     })
   }
-})`
+})
   
  
 

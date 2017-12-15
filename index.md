@@ -89,7 +89,7 @@ duration	Number	500	滑动动画时长
  
  ### 最麻烦的当属购物车加购事件最麻烦了，给我一首歌的时间，且听我慢慢跟你说
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/1.png)
- #### sCar/sCar.index:
+ #### sCar/sCar.wxml:
  `
  <view class="cart-box">
         <view class="item" wx:for="{{buy}}" wx:key="id">
@@ -127,116 +127,174 @@ duration	Number	500	滑动动画时长
       </view>
 </view>
  
+  #### sCar/sCar.js:
+  
  `
- #### bali/index.js:
- `
- // pages/bali/index.js
-var app = getApp()     
+ const app = getApp()
 Page({
   data: {
-   },
-  // 购买， 点击图片，购物车显示已加购
-  buy: function (e) {
-    for (var i = 0; i < this.data.goods.length;i++){
-      if (e.currentTarget.dataset.id == this.data.goods[i].id) {
-        app.globalData.buy.push(this.data.goods[i])
-        console.log(app.globalData.buy)
-  }
-  }
-},
-  /**
-   * 生命周期函数--监听页面加载
-   */
+    allSelect: "circle",
+    num: 0,
+    count: 0,
+     },
   onLoad: function () {
-
-    this.setData({
-      movies: app.globalData.movies,
-      goods: app.globalData.goods
+      this.setData({
+      buy: app.globalData.buy,
     });
-    // console.log(this.data.goods);
+    },
+    `
+    `
+  change: function (e) {
+     var that = this
+    //得到下标
+     var index = e.currentTarget.dataset.index
+     //得到选中状态
+    var select = e.currentTarget.dataset.select
+    console.log(e.currentTarget.dataset.select);
+    if (select == "circle") {
+     var stype = "success"
+    } else {
+      var  stype = "circle"
+    }
+    //把新的值给新的数组
+     var newList = that.data.buy
+     newList[index].select = stype
 
-  },
-  //收藏，动画放大效果
-  shoucang: function (event) {
-    var animation = wx.createAnimation({
-      duration: 700,
+    //把新的数组传给前台
+    that.setData({
+      buy: newList
     })
-    //  图片放大
-    animation.opacity(0.6).scale(0.9).step();//修改透明度,放大  
-    // animation.scale(0.9).step();
-    // timingFunction: 'ease-in-out';
-    this.setData({
-      enlargeAnimation: animation.export()
-    })
+    //调用计算数目方法
+    that.countNum()
+    //计算金额
+    that.count()
   },
+  `
+  `
+  //加法
+  addtion: function (e) {
+    var that = this
+    //得到下标
+    var index = e.currentTarget.dataset.index
+     //得到点击的值
+    var num = e.currentTarget.dataset.num
+      //默认99件最多
+    if (num < 100) {
+      num++
+    }
+    //把新的值给新的数组
+    var newList = that.data.buy
+    newList[index].num = num
 
-  // 购买点击事件，触发时使购物车图片放大
-  goumai: function (event) {
-    var animation = wx.createAnimation({
-      duration: 100,
+    //把新的数组传给前台
+    that.setData({
+      buy: newList
     })
-    //购物车旋转
-    animation.rotate(30).step();
-    animation.rotate(0).step();
-    animation.rotate(-30).step();
-    animation.rotate(0).step();
-    // timingFunction: 'ease-in-out'
-    this.setData({
-      rorateAnimation: animation.export(),
-     })
+    //调用计算数目方法
+    that.countNum()
+    //计算金额
+    that.count()
   },
+  `
+  `
+  // //减法
+  subtraction: function (e) {
+    var that = this
+    //得到下标
+    var index = e.currentTarget.dataset.index
+    //得到点击的值
+    var num = e.currentTarget.dataset.num
+    //把新的值给新的数组
+    var newList = that.data.buy
+    //当1件时，点击移除
+    if (num == 1) {
+      newList.splice(index, 1)
+    } else {
+      num--
+      newList[index].num = num
+    }
 
-  // 购物车跳转事件
-  onTa: function (event) {
-    wx.switchTab({
-      url: "../sCar/sCar"
-    });
+    //把新的数组传给前台
+    that.setData({
+      buy: newList
+    })
+    //调用计算数目方法
+    that.countNum()
+    //计算金额
+    that.count()
   },
-  //首页跳转事件
-  onTap: function () {
-    wx.switchTab({
-      url: '../index/index',
+  `
+  `
+  //全选
+  allSelect: function (e) {
+    var that = this
+    //先判断现在选中没
+    var allSelect = e.currentTarget.dataset.select
+    var newList = that.data.buy
+    if (allSelect == "circle") {
+      //先把数组遍历一遍，然后改掉select值
+      for (var i = 0; i < newList.length; i++) {
+        newList[i].select = "success"
+      }
+      var select = "success"
+    } else {
+      for (var i = 0; i < newList.length; i++) {
+        newList[i].select = "circle"
+      }
+      var select = "circle"
+    }
+    that.setData({
+      buy: newList,
+      allSelect: select
+    })
+    //调用计算数目方法
+    that.countNum()
+    //计算金额
+    that.count()
+  },
+  `
+  `
+  // //计算数量
+  countNum: function () {
+    var that = this
+    //遍历数组，把既选中的num加起来
+    var newList = that.data.buy
+    var allNum = 0
+    for (var i = 0; i < newList.length; i++) {
+      if (newList[i].select == "success") {
+        allNum += parseInt(newList[i].num)
+      }
+    }
+    parseInt
+    console.log(allNum)
+    that.setData({
+      num: allNum
     })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    wx.setNavigationBarTitle({
-      title: '商铺首页'
+  `
+  `
+  //计算金额方法
+  count: function () {
+    var that = this
+    //思路和上面一致
+    //选中的订单，数量*价格加起来
+    var newList = that.data.buy
+    var newCount = 0
+    for (var i = 0; i < newList.length; i++) {
+      if (newList[i].select == "success") {
+        newCount += newList[i].num * newList[i].price
+      }
+    }
+    that.setData({
+      count: newCount
     })
-  },
- `
- 
+  }
+})`
   
  
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+ 
 
-# Header 1
-## Header 2
-### Header 3
+### 未完待续🙃
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AutumnTale666/miaomiaoXiong.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[欢迎来到me的github](https://github.com/AutumnTale666/miaomiaoXiong.github.io)  

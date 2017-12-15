@@ -31,6 +31,7 @@ interval	Number	5000	自动切换时间间隔
 duration	Number	500	滑动动画时长	
   
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
+ ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/2.jpg)
  #### bali/index.html:
   ` 
   <viewclass="tui-bd__image">
@@ -87,6 +88,7 @@ duration	Number	500	滑动动画时长
  
  
  ### 最麻烦的当属购物车加购事件最麻烦了，给我一首歌的时间，且听我慢慢跟你说
+ ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/3.jpg)
  #### sCar/sCar.index:
  `
  <view class="cart-box">
@@ -133,8 +135,6 @@ var app = getApp()
 Page({
   data: {
    },
-
- 
   // 购买， 点击图片，购物车显示已加购
   buy: function (e) {
     for (var i = 0; i < this.data.goods.length;i++){
@@ -200,13 +200,6 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
@@ -214,42 +207,6 @@ Page({
       title: '商铺首页'
     })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
-})
  `
  
   

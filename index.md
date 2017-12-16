@@ -55,11 +55,13 @@
 `
  ### 送走了购物车的加购动画，下面为大家分享一个收藏动画， 爱心 ♥
  
- #### 类似之前的购物车动画，首先我们在 wxml 中绑定事件 bindtap='shoucang' ,同样使用  animation="{{enlargeAnimation}}"  获取动画效果， 代码如下：
+ ### 类似之前的购物车动画，首先我们在 wxml 中绑定事件 bindtap='shoucang' ,同样使用  animation="{{enlargeAnimation}}"  获取动画效果， 代码如下：
+ 
  `
  <image src='../../assets/icons/shoucang.png' animation="{{enlargeAnimation}}"           bindtap='shoucang'></image>
  `
- #### js 文件中同样使用 wx.createAnimation() 创建动画，animation.opacity(0.6).scale(0.9).step();//修改透明度,放大  
+ ###  js 文件中同样使用 wx.createAnimation() 创建动画，animation.opacity(0.6).scale(0.9).step();//修改透明度,放大  
+ 
  `
   //收藏，动画放大效果
   shoucang: function (event) {
@@ -74,18 +76,20 @@
   },
  `
  
- #### 是不是觉得超级简单， 通过一个事件绑定 秀出你的神操作。
+ ## 是不是觉得超级简单， 通过一个事件绑定 秀出你的神操作。
  
  🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈
  
- ### 下面，该是严肃的时候了，以上只是简单的切页面，我们要把喜欢的东西加进购物车，保持清醒，跟着我把购物车的逻辑理理清楚 📣
+ ###  下面，该是严肃的时候了，以上只是简单的切页面，我们要把喜欢的东西加进购物车，保持清醒，跟着我把购物车的逻辑理理清楚 📣
+ 
+ 
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/2.jpg)
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/1.png)
  
- ####  首先我们要在 easy-mock 上创建一份自己的数据，
+ ###   首先我们要在 easy-mock 上创建一份自己的数据，
  [easy-mock 点击进入](https://www.easy-mock.com/login)
  
- #### 通过 wx.request({url:"....."}) 获取你的easy-mock 中的数据， 代码示例如下：
+ ####   通过 wx.request({url:"....."}) 获取你的easy-mock 中的数据， 代码示例如下：
  
  
  `onLaunch(options) {
@@ -105,9 +109,7 @@
   },
 `
  
- 
- 
- #### 由于商品页面加入购物车然后要在购物车页面显示， 我额外的设置了一个全局数组 buy ,以便之后在购物车页面显示我所添加的物品详情 （图片， 价格 ，数量等）, 在 app.js 中代码如下：
+ ####   由于商品页面加入购物车然后要在购物车页面显示， 我额外的设置了一个全局数组 buy ,以便之后在购物车页面显示我所添加的物品详情 （图片， 价格 ，数量等）, 在 app.js 中代码如下：
  
  
  `
@@ -117,7 +119,7 @@
  `
  
  
- ####  在商品页面中的 js 文件中通过  onLoad: function () 将数据从全局中获取
+####  在商品页面中的 js 文件中通过  onLoad: function () 将数据从全局中获取
  
  `
   onLoad: function () {
@@ -127,13 +129,13 @@
     });
  `
  
- #### 在 wxml 中通过绑定事件  bindtap='buy' 将选中的商品放入我们的购物车页面
+ ####   在 wxml 中通过绑定事件  bindtap='buy' 将选中的商品放入我们的购物车页面
   
    `
   <image src='../../assets/icons/goumai.png' data-id="{{item.id}}" bindtap='buy'></image>
    `
-   
- #### 在对应的 js 文件中具体实现 buy 事件代码如下：
+      
+ ####   在对应的 js 文件中具体实现 buy 事件代码如下：
  
  `
   // 购买， 点击图片，购物车显示已加购
@@ -153,9 +155,9 @@
   🔊 🔊 🔊 🔊 🔊
   
   
-  #### 购物车已经放好了我们的宝贝，接下来要显示才可以， 继续我们的 js 数据征途 fighting!!!
+##   购物车已经放好了我们的宝贝，接下来要显示才可以， 继续我们的 js 数据征途 fighting!!!
   
-  #### 清楚地明白我们要什么， 如： 商品图片， 名称， 价格， 但是为了实现数量的增减效果，需要额外设置  全选 allSelect: "circle",  数量 num: 0,  共计数额  count: 0
+###     清楚地明白我们要什么， 如： 商品图片， 名称， 价格， 但是为了实现数量的增减效果，需要额外设置  全选 allSelect: "circle",  数量 num: 0,  共计数额  count: 0
   
   `
    data: {
@@ -166,7 +168,8 @@
   `
   
   
-  #### 将全局数据  buy 数组添加到我们购物车的 js 页面中， 代码如下：
+  ####    将全局数据  buy 数组添加到我们购物车的 js 页面中， 代码如下：
+  
   [setData](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxs/06datatype.html)
   
   
@@ -177,7 +180,7 @@
     });
     },
   `
-  #### 计算商品数量， 代码如下：
+  ####   计算商品数量， 代码如下：
   
   `
    //计算数量
@@ -199,7 +202,7 @@
   },
   `
   
-  #### 计算商品金额，代码如下：
+  ####   计算商品金额，代码如下：
   
   `
   //计算金额方法
@@ -220,7 +223,8 @@
   
   `
    
-   #### 将购物车中的商品数量添加，代码如下：
+   ####   将购物车中的商品数量添加，代码如下：
+   **   <button class="goods-btn btn-add" data-index="{{index}}" data-num="{{item.num}}" bindtap="addtion">+</button>  **
    
    `
      //商品数量增加函数
@@ -246,6 +250,7 @@
   },
    `
   #### 将购物车中的商品数量减少，但数量减少到小于1时，该商品就会消失，代码如下：
+  **  <button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button> **
   
   `
   //商品数量减少
@@ -276,7 +281,9 @@
   },
   `
    #### 单选商品，结算金额
+   
    **   <icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />  **
+   
    `
     change: function (e) {
      var that = this
@@ -304,10 +311,15 @@
     that.count()
   },
 `
+
  #### 全选商品，并结算金额
  
- `
-   //全选
+ **  <view class="allSelect">
+    <icon type="{{allSelect}}" size="26" data-select="{{allSelect}}" bindtap="allSelect" />
+    <view class="allSelect-text">全选</view>
+  </view> **
+  
+ `全选
   allSelect: function (e) {
     var that = this
     //先判断现在选中没
@@ -336,6 +348,6 @@
   },
  `
 
-### 未完待续🙃
+# ** 希望有兴趣的朋友一起讨论，一起切磋，欢迎交流 [邮箱：]（1920459934@qq.com ）**🙃
 
 [欢迎来到me的github](https://github.com/AutumnTale666/miaomiaoXiong.github.io)  

@@ -82,7 +82,7 @@
  
  🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈
  
- ###  下面，该是严肃的时候了，以上只是简单的切页面，我们要把喜欢的东西加进购物车，保持清醒，跟着我把购物车的逻辑理理清楚 📣
+ ###  下面，该是严肃的时候了，以上只是简单的切页面，我们要把喜欢的东西加进购物车，保持头脑清醒，跟着我把购物车的逻辑理理清楚 📣
  
  
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/2.jpg)
@@ -219,9 +219,10 @@
   } `
    
  ####   将购物车中的商品数量添加，代码如下：
+ 
 `<button class="goods-btn btn-add" data-index="{{index}}" data-num="{{item.num}}" bindtap="addtion">+</button>`
    
- ` //商品数量增加函数
+ `//商品数量增加函数
   addtion: function (e) {
     var that = this
     //得到下标
@@ -241,13 +242,14 @@
     that.countNum()
     //计算金额
     that.count()
-  },
-   `
+  }, `
+  
  #### 将购物车中的商品数量减少，但数量减少到小于1时，该商品就会消失，代码如下：
  
-`<button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button> `
+`<button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button>`
+
   
- ` //商品数量减少
+ `//商品数量减少
   subtraction: function (e) {
     var that = this
     //得到下标
@@ -272,13 +274,13 @@
     that.countNum()
     //计算金额
     that.count()
-  },
-  `
+  },`
  #### 单选商品，结算金额
  
 `<icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />`
+
    
- ` change: function (e) {
+ `change: function (e) {
      var that = this
     //得到下标
      var index = e.currentTarget.dataset.index
@@ -302,8 +304,7 @@
     that.countNum()
     //计算金额
     that.count()
-  },
-`
+  },`
 
 ### 全选商品，并结算金额
  

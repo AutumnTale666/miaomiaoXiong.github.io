@@ -1,4 +1,4 @@
- _Welcome to AutumnTalebearer666‘s web blog_
+ _Welcome to AutumnTale666'sweb blog_
  # 微信小程序之--（与唯品会来场粉红色的邂逅  🎉🎉🎉）
  买买买，虽然双十二刚过，可是唯品会的折扣却是依然火爆。一打开页面，便是粉色的主页映入眼帘，琳琅满目的商品，让我这个月光族过了把眼瘾。虽然买不起，那就自己模仿着写一个，把喜欢的商品一个个推进小推车里。（😍）下面为大家分享一个把唯品会里面的精致商品推进自己购物车的微信小程序，🙈
  
@@ -184,7 +184,7 @@
   `//计算数量
   countNum: function () {
     var that = this
-    //遍历数组，把既选中的num加起来
+    遍历数组，把既选中的num加起来
     var newList = that.data.buy
     var allNum = 0
     for (var i = 0; i < newList.length; i++) {
@@ -205,7 +205,7 @@
   `//计算金额方法
   count: function () {
     var that = this
-     //选中的订单，数量*价格加起来
+     选中的订单，数量*价格加起来
     var newList = that.data.buy
     var newCount = 0
     for (var i = 0; i < newList.length; i++) {
@@ -225,22 +225,21 @@
  `//商品数量增加函数
   addtion: function (e) {
     var that = this
-    //得到下标
+    得到下标
     var index = e.currentTarget.dataset.index
-     //得到点击的值
+     得到点击的值
     var num = e.currentTarget.dataset.num
        num++
-     //把新的值给新的数组
+     把新的值给新的数组
     var newList = that.data.buy
     newList[index].num = num
-
-    //把新的数组传给前台
+     把新的数组传给前台
     that.setData({
       buy: newList
     })
-    //调用计算数目方法
+    调用计算数目方法
     that.countNum()
-    //计算金额
+    计算金额
     that.count()
   }, `
   
@@ -249,30 +248,29 @@
 `<button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button>`
 
   
- `//商品数量减少
+ `商品数量减少
   subtraction: function (e) {
     var that = this
-    //得到下标
+    得到下标
     var index = e.currentTarget.dataset.index
-    //得到点击的值
+    得到点击的值
     var num = e.currentTarget.dataset.num
-    //把新的值给新的数组
+    把新的值给新的数组
     var newList = that.data.buy
-    //当1件时，点击移除
+    当1件时，点击移除
     if (num == 1) {
       newList.splice(index, 1)
     } else {
       num--
       newList[index].num = num
     }
-
-    //把新的数组传给前台
+   把新的数组传给前台
     that.setData({
       buy: newList
     })
-    //调用计算数目方法
+    调用计算数目方法
     that.countNum()
-    //计算金额
+    计算金额
     that.count()
   },`
  #### 单选商品，结算金额
@@ -282,9 +280,9 @@
    
  `change: function (e) {
      var that = this
-    //得到下标
+    得到下标
      var index = e.currentTarget.dataset.index
-     //得到选中状态
+     得到选中状态
     var select = e.currentTarget.dataset.select
     console.log(e.currentTarget.dataset.select);
     if (select == "circle") {
@@ -292,17 +290,16 @@
     } else {
       var  stype = "circle"
     }
-    //把新的值给新的数组
+    把新的值给新的数组
      var newList = that.data.buy
      newList[index].select = stype
-
-    //把新的数组传给前台
+    把新的数组传给前台
     that.setData({
       buy: newList
     })
-    //调用计算数目方法
+    调用计算数目方法
     that.countNum()
-    //计算金额
+    计算金额
     that.count()
   },`
 

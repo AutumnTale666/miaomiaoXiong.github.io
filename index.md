@@ -10,25 +10,17 @@
  
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/4.jpg)
  
- #### index.wxml:
- <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
+ #### index.wxml:使用swiper组件,里面放置block wx:for 循环movies 图片数组，再次使用swiper-item 依次将item.url 图片地址输出，就可以看到我们的轮播图了。
+` <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="2000">
     <block wx:for="{{movies}}" wx:key="key">
       <swiper-item>
         <image src="{{item.url}}" class="slide-image" mode="widthfix" />
       </swiper-item>
     </block>
-  </swiper>  
+  </swiper> 
+  `
  
- 使用swiper组件,滑块视图容器。
- 
- 
-indicator-dots	Boolean	false	是否显示面板指示点	
-
-autoplay	Boolean	false	是否自动切换	
-
-interval	Number	5000	自动切换时间间隔	
-
-duration	Number	500	滑动动画时长	
+####  [swiper 属性具体小提示](https://mp.weixin.qq.com/debug/wxadoc/dev/component/swiper.html)
   
  ### 两个小动画： 加购小车左右摇摆动画效果， 收藏小爱心动画效果
  ![Image](https://github.com/AutumnTale666/WEAPP_DEMO/blob/master/weiPH/img/2.jpg)

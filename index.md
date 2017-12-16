@@ -29,7 +29,10 @@
  #### 点击图中的购买图片，我们的购物车就会随之扭扭身体，表示已经加入购物车☺ ， 具体代码如下：
  
  ####  在 wxml 中添加 animation="{{rorateAnimation}}"  动画。
- #### [animation 动画]（https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-animation.html#wxcreateanimationobject）
+ ####  [animation 动画]
+ 
+ (https://mp.weixin.qq.com/debug/wxadoc/dev/api/apianimation.html)
+
  `
  <image src='../../assets/icons/shopping.png' animation="{{rorateAnimation}}">         </image>
     `

@@ -219,10 +219,9 @@
   } `
    
  ####   将购物车中的商品数量添加，代码如下：
- **   <button class="goods-btn btn-add" data-index="{{index}}" data-num="{{item.num}}" bindtap="addtion">+</button>  **
+`<button class="goods-btn btn-add" data-index="{{index}}" data-num="{{item.num}}" bindtap="addtion">+</button>`
    
-   `
-     //商品数量增加函数
+ ` //商品数量增加函数
   addtion: function (e) {
     var that = this
     //得到下标
@@ -246,7 +245,7 @@
    `
  #### 将购物车中的商品数量减少，但数量减少到小于1时，该商品就会消失，代码如下：
  
- **  <button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button> **
+`<button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button> `
   
  ` //商品数量减少
   subtraction: function (e) {
@@ -276,8 +275,8 @@
   },
   `
  #### 单选商品，结算金额
-   
- **   <icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />  **
+ 
+`<icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />`
    
  ` change: function (e) {
      var that = this
@@ -308,10 +307,10 @@
 
 ### 全选商品，并结算金额
  
-**  <view class="allSelect">
+`<view class="allSelect">
     <icon type="{{allSelect}}" size="26" data-select="{{allSelect}}" bindtap="allSelect" />
     <view class="allSelect-text">全选</view>
-  </view> **
+  </view> `
   
  `//全选
   allSelect: function (e) {

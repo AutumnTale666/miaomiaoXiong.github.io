@@ -179,10 +179,9 @@
     });
     },
   `
-  ####   计算商品数量， 代码如下：
+ ####  计算商品数量， 代码如下：
   
-  `
-   //计算数量
+  `//计算数量
   countNum: function () {
     var that = this
     //遍历数组，把既选中的num加起来
@@ -201,10 +200,9 @@
   },
   `
   
-  ####   计算商品金额，代码如下：
+ ####  计算商品金额，代码如下：
   
-  `
-  //计算金额方法
+  `//计算金额方法
   count: function () {
     var that = this
      //选中的订单，数量*价格加起来
@@ -218,12 +216,10 @@
     that.setData({
       count: newCount
     })
-  }
-  
-  `
+  } `
    
-   ####   将购物车中的商品数量添加，代码如下：
-   **   <button class="goods-btn btn-add" data-index="{{index}}" data-num="{{item.num}}" bindtap="addtion">+</button>  **
+ ####   将购物车中的商品数量添加，代码如下：
+ **   <button class="goods-btn btn-add" data-index="{{index}}" data-num="{{item.num}}" bindtap="addtion">+</button>  **
    
    `
      //商品数量增加函数
@@ -248,11 +244,11 @@
     that.count()
   },
    `
-  #### 将购物车中的商品数量减少，但数量减少到小于1时，该商品就会消失，代码如下：
-  **  <button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button> **
+ #### 将购物车中的商品数量减少，但数量减少到小于1时，该商品就会消失，代码如下：
+ 
+ **  <button class="goods-btn btn-minus" data-index="{{index}}" data-num="{{item.num}}" bindtap="subtraction">—</button> **
   
-  `
-  //商品数量减少
+ ` //商品数量减少
   subtraction: function (e) {
     var that = this
     //得到下标
@@ -279,12 +275,11 @@
     that.count()
   },
   `
-   #### 单选商品，结算金额
+ #### 单选商品，结算金额
    
-   **   <icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />  **
+ **   <icon type="{{item.select}}" size="26" data-index="{{index}}" data-select="{{item.select}}" bindtap="change" />  **
    
-   `
-    change: function (e) {
+ ` change: function (e) {
      var that = this
     //得到下标
      var index = e.currentTarget.dataset.index
@@ -311,14 +306,14 @@
   },
 `
 
- #### 全选商品，并结算金额
+### 全选商品，并结算金额
  
- **  <view class="allSelect">
+**  <view class="allSelect">
     <icon type="{{allSelect}}" size="26" data-select="{{allSelect}}" bindtap="allSelect" />
     <view class="allSelect-text">全选</view>
   </view> **
   
- `全选
+ `//全选
   allSelect: function (e) {
     var that = this
     //先判断现在选中没
@@ -347,6 +342,6 @@
   },
  `
 
-# ** 希望有兴趣的朋友一起讨论，一起切磋，欢迎交流 [qq：] # （1920459934）**🙃
+#   ** 希望有兴趣的朋友一起讨论，一起切磋，欢迎交流 QQ：（1920459934）🙃 **
 
-[github](https://github.com/AutumnTale666/miaomiaoXiong.github.io)  
+# [欢迎进入我的github浏览 🙈 ](https://github.com/AutumnTale666/miaomiaoXiong.github.io)  

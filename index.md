@@ -139,8 +139,7 @@
       
  ####   在对应的 js 文件中具体实现 buy 事件代码如下：
  
- `
-  // 购买， 点击图片，购物车显示已加购
+ ` // 购买， 点击图片，购物车显示已加购
   buy: function (e) {
     for (var i = 0; i < this.data.goods.length;i++){
     //点击购买图片触发 buy 事件 ，其中的 item.id 具有唯一性， 将其传入函数中与原来的所有商品中的 id 相匹配， 如果存在，即把它 push 进新的数组 buy 中。
@@ -149,8 +148,7 @@
         console.log(app.globalData.buy)
         }
      }
-  },
- 
+  }, 
  `
  
  

@@ -340,4 +340,4 @@
  `
 
 #   ** 希望有兴趣的朋友一起讨论，一起切磋，欢迎交流 QQ：（1920459934）🙃 **
-# [欢迎进入我的github浏览 🙈 ](https://github.com/AutumnTale666/miaomiaoXiong.github.io/blob/master/index.md)  
+# [欢迎进入我的github浏览 🙈 ](https://github.com/AutumnTale666/miaomiaoXiong.github.io)  
